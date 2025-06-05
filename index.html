@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="num"></p>
+    <br>
+    <p id="greet"></p>
+    <br>
+    <p id="hour"></p>
+    <br>
+    <button onclick="myfunction()" style="float: right;">Click me!</button>
+    <script>
+        var sports = ("baseball, soccer, basketball, football, hockey")
+        document.write("a and b are equal: " + (a == b))
+        document.write(" a ,b and c are equal:" + (a == b))
+        document.write("<br>")
+        document.write(sports)
+        function myfunction() {
+            var greeting;
+            var time = new Date().getHours();
+
+            if (time < 10) {
+                greeting = "good morning";
+            }
+
+            else if (time < 20) {
+                greeting = "good afternoon";
+            }
+
+            else {
+                greeting = "good evening";
+            }
+            document.getElementById("hour").innerHTML = "current hour is: " + time;
+            document.getElementById("greet").innerHTML = greeting;
+        }
+        var a = 140
+        var b = 70 * 2
+        var c = 70 + 70
+        var text = "";
+        var i = 0;
+        while (i < 10) {
+            text += "<br> the number is: " + i;
+            i++;
+        }
+        document.getElementById("num").innerHTML = text;
+    </script>
+</body>
+
+</html>
