@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework</title>
+</head>
+
+<body onload="displayDate()">
+
+    <script>
+        function getFormattedDate() {
+            let date = new Date();
+            let mm = String(date.getMonth() + 1).padStart(2, '0');
+            let dd = String(date.getDate()).padStart(2, '0');
+            let yy = String(date.getFullYear()).slice(-2);
+
+            return `${mm}/${dd}/${yy}`;
+        }
+
+        function displayDate() {
+            document.getElementById("date").innerText = getFormattedDate();
+        }
+        function generateNumbers() {
+            let numbers = [];
+            let count = 2;
+
+            for (let i = 0; i < count; i++) {
+                let randomNum = Math.floor(Math.random() * 10);
+                numbers.push(randomNum);
+            }
+
+            document.getElementById("output").innerText = "Random Numbers: " + numbers.join(", ");
+        }
+    </script>
+    <h2>Today's Date:</h2>
+    <p id="date"></p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h2>Generated Random Numbers</h2>
+    <button onclick="generateNumbers()">Generate Numbers</button>
+    <p id="output"></p>
+
+</body>
+
+</html>
